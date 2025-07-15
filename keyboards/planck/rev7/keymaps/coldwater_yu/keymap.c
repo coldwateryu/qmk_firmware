@@ -86,6 +86,12 @@ tap_dance_action_t tap_dance_actions[] = {
 #define ALTLBRC ALT_T(KC_LBRC)
 #define SFTRBRC SFT_T(KC_RBRC)
 
+// shortcuts
+#define MEH1 MEH(KC_1)
+#define MEH2 MEH(KC_2)
+#define MEHD MEH(KC_DOT)
+#define PRINT CTL_T(KC_F16)
+#define MEHE MEH(KC_E)
 
 /* clang-format off */
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -121,9 +127,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_COLEMAK] = LAYOUT_planck_grid(
     KC_Q,    KC_W,     KC_F,    KC_P,   KC_B,    TDXXPR,  TDPLNX,  KC_J,   KC_L,    KC_U,    KC_Y,    KC_QUOT,
-    CTLA,    GUIR,     ALTS,    SFTT,   KC_G,    _______, _______, KC_M,   SFTN,    ALTE,    GUII,    CTLO,
+    CTLA,    GUIR,     ALTS,    SFTT,   KC_G,    MEH1,    MEH2,    KC_M,   SFTN,    ALTE,    GUII,    CTLO,
     KC_Z,    KC_X,     KC_C,    KC_D,   KC_V,    KC_VOLD, KC_VOLU, KC_K,   KC_H,    TDCOM,   TDDCL,   TDSBSL,
-    KC_BRID, _______,  MS_ESC,  LOWBSP, KC_LSFT, KC_DEL,  KC_TAB,  KC_SPC, RAISENT, FN_TAB,  _______, KC_BRIU
+    KC_BRID, MEHD,     MS_ESC,  LOWBSP, KC_LSFT, KC_DEL,  KC_TAB,  KC_SPC, RAISENT, FN_TAB,  MEHE,    KC_BRIU
 ),
 
 /* Dvorak
@@ -158,7 +164,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_LOWER] = LAYOUT_planck_grid(
     KC_GRV,  _______, KC_LPRN, KC_RPRN, _______, _______, _______, _______, KC_7,    KC_8,    KC_9,    KC_EQL,
     KC_LCTL, KC_LWIN, ALTLBRC, SFTRBRC, _______, _______, _______, _______, SFTKC_4, ALTKC_5, SUPKC_6, CTLMIN,
-    _______, _______, _______, _______, _______, _______, _______, _______, KC_1,    KC_2,    KC_3,    KC_SLSH,
+    _______, _______, _______, PRINT,   _______, _______, _______, _______, KC_1,    KC_2,    KC_3,    KC_SLSH,
     _______, _______, _______, _______, _______, _______, _______,  KC_SPC, KC_0,    _______, KC_DOT,  _______
 ),
 
