@@ -37,8 +37,7 @@ enum {
     TD_PP_NXT, // play / next track
     TD_SL_BSL, // slash / backslash
     TD_C_SCL, // comma/semicolon
-    TD_D_CL, // dot/colon,
-    TD_HIFI_HSET // omarchy toggle airpods profile
+    TD_D_CL // dot/colon
 };
 
 
@@ -49,8 +48,7 @@ tap_dance_action_t tap_dance_actions[] = {
     [TD_PP_NXT] = ACTION_TAP_DANCE_DOUBLE(KC_MPLY, KC_MNXT),
     [TD_SL_BSL] = ACTION_TAP_DANCE_DOUBLE(KC_SLASH, KC_BACKSLASH),
     [TD_C_SCL]  = ACTION_TAP_DANCE_DOUBLE(KC_COMM, KC_SCLN),
-    [TD_D_CL]  = ACTION_TAP_DANCE_DOUBLE(KC_DOT, LSFT(KC_SCLN)),
-    [TD_HIFI_HSET] = ACTION_TAP_DANCE_DOUBLE(LGUI(KC_F7), LGUI(KC_F8))
+    [TD_D_CL]  = ACTION_TAP_DANCE_DOUBLE(KC_DOT, LSFT(KC_SCLN))
 };
 
 
@@ -67,7 +65,6 @@ tap_dance_action_t tap_dance_actions[] = {
 #define TDSBSL TD(TD_SL_BSL)
 #define TDCOM TD(TD_C_SCL)
 #define TDDCL TD(TD_D_CL)
-#define AIRPT TD(TD_HIFI_HSET)
 
 
 // Modified Alphas
@@ -90,10 +87,8 @@ tap_dance_action_t tap_dance_actions[] = {
 #define SFTRBRC SFT_T(KC_RBRC)
 
 // shortcuts
-#define MEH1 MEH(KC_1)
-#define MEH2 MEH(KC_2)
-#define HIFI LGUI(KC_F7)
-#define HSET LGUI(KC_F8)
+#define DUNNO LGUI(KC_F7)
+#define AIRPT LGUI(KC_F8)
 #define PRINT LGUI(KC_SLASH)
 
 /* clang-format off */
@@ -130,9 +125,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_COLEMAK] = LAYOUT_planck_grid(
     KC_Q,    KC_W,     KC_F,    KC_P,   KC_B,    TDXXPR,  TDPLNX,  KC_J,   KC_L,    KC_U,    KC_Y,    KC_QUOT,
-    CTLA,    GUIR,     ALTS,    SFTT,   KC_G,    MEH1,    MEH2,    KC_M,   SFTN,    ALTE,    GUII,    CTLO,
+    CTLA,    GUIR,     ALTS,    SFTT,   KC_G,    DUNNO,   AIRPT,   KC_M,   SFTN,    ALTE,    GUII,    CTLO,
     KC_Z,    KC_X,     KC_C,    KC_D,   KC_V,    KC_VOLD, KC_VOLU, KC_K,   KC_H,    TDCOM,   TDDCL,   TDSBSL,
-    KC_BRID, _______,  MS_ESC,  LOWBSP, KC_LSFT, KC_DEL,  KC_TAB,  KC_SPC, RAISENT, FN_TAB,  AIRPT,   KC_BRIU
+    KC_BRID, KC_RALT,  MS_ESC,  LOWBSP, KC_LSFT, KC_DEL,  KC_TAB,  KC_SPC, RAISENT, FN_TAB,  _______, KC_BRIU
 ),
 
 /* Dvorak
