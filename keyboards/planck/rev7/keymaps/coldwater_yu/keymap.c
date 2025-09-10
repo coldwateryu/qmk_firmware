@@ -33,7 +33,7 @@ enum planck_keycodes { PLOVER = SAFE_RANGE, BACKLIT, EXT_PLV };
 
 // Tap Dance declarations
 enum {
-    TD_XX_PRV, // nothing / previous track
+    TD_XX_PRV, // hyprland pin-tile toggle / previous track
     TD_PP_NXT, // play / next track
     TD_SL_BSL, // slash / backslash
     TD_C_SCL, // comma/semicolon
@@ -44,7 +44,7 @@ enum {
 // Tap Dance definitions
 tap_dance_action_t tap_dance_actions[] = {
     // Tap once for Escape, twice for Caps Lock
-    [TD_XX_PRV] = ACTION_TAP_DANCE_DOUBLE(_______, KC_MPRV),
+    [TD_XX_PRV] = ACTION_TAP_DANCE_DOUBLE(LGUI(KC_F9), KC_MPRV),
     [TD_PP_NXT] = ACTION_TAP_DANCE_DOUBLE(KC_MPLY, KC_MNXT),
     [TD_SL_BSL] = ACTION_TAP_DANCE_DOUBLE(KC_SLASH, KC_BACKSLASH),
     [TD_C_SCL]  = ACTION_TAP_DANCE_DOUBLE(KC_COMM, KC_SCLN),
@@ -87,7 +87,6 @@ tap_dance_action_t tap_dance_actions[] = {
 #define SFTRBRC SFT_T(KC_RBRC)
 
 // shortcuts
-#define DUNNO LGUI(KC_F7)
 #define AIRPT LGUI(KC_F8)
 #define PRINT LGUI(KC_SLASH)
 
@@ -125,9 +124,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_COLEMAK] = LAYOUT_planck_grid(
     KC_Q,    KC_W,     KC_F,    KC_P,   KC_B,    TDXXPR,  TDPLNX,  KC_J,   KC_L,    KC_U,    KC_Y,    KC_QUOT,
-    CTLA,    GUIR,     ALTS,    SFTT,   KC_G,    DUNNO,   AIRPT,   KC_M,   SFTN,    ALTE,    GUII,    CTLO,
+    CTLA,    GUIR,     ALTS,    SFTT,   KC_G,    KC_RALT, AIRPT,   KC_M,   SFTN,    ALTE,    GUII,    CTLO,
     KC_Z,    KC_X,     KC_C,    KC_D,   KC_V,    KC_VOLD, KC_VOLU, KC_K,   KC_H,    TDCOM,   TDDCL,   TDSBSL,
-    KC_BRID, KC_RALT,  MS_ESC,  LOWBSP, KC_LSFT, KC_DEL,  KC_TAB,  KC_SPC, RAISENT, FN_TAB,  _______, KC_BRIU
+    KC_BRID, _______,  MS_ESC,  LOWBSP, KC_LSFT, KC_DEL,  KC_TAB,  KC_SPC, RAISENT, FN_TAB,  _______, KC_BRIU
 ),
 
 /* Dvorak
