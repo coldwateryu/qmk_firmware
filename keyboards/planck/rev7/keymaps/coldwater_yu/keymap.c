@@ -88,7 +88,7 @@ tap_dance_action_t tap_dance_actions[] = {
 
 // shortcuts
 #define AIRPT LGUI(KC_F8)
-#define PRINT LGUI(KC_SLASH)
+#define PRINT LGUI(KC_BSLS)
 
 /* clang-format off */
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -251,10 +251,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_MOUSE] = LAYOUT_planck_grid(
-    _______, _______, _______, _______, _______, _______, _______, KC_WH_U, KC_WH_L, KC_MS_U, KC_WH_R, _______,
-    KC_LCTL, KC_LWIN, KC_LALT, KC_LSFT, _______, _______, _______, KC_WH_D, KC_MS_L, KC_MS_D, KC_MS_R, _______,
+    _______, _______, _______, _______, _______, _______, _______, MS_WHLU, MS_WHLL, MS_UP,   MS_WHLR, _______,
+    KC_LCTL, KC_LWIN, KC_LALT, KC_LSFT, _______, _______, _______, MS_WHLD, MS_LEFT, MS_DOWN, MS_RGHT, _______,
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
-    _______, _______, _______, _______, _______, _______, _______, KC_BTN1, KC_BTN2, _______, _______, _______
+    _______, _______, _______, _______, _______, _______, _______, MS_BTN1, MS_BTN2, _______, _______, _______
 )
 
 };

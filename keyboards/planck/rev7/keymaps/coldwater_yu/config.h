@@ -22,6 +22,9 @@
 
 #    define DEFAULT_LAYER_SONGS \
         { SONG(QWERTY_SOUND), SONG(COLEMAK_SOUND), SONG(DVORAK_SOUND) }
+
+// Mask all keys when music mode is on (keys only play notes, don't type)
+#    define MUSIC_MASK (keycode != KC_NO)
 #endif
 
 /*
